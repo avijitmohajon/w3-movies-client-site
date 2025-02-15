@@ -1,6 +1,6 @@
-# 🎥 Movie Portal
+# 🎥 W3 Movies
 
-A user-friendly **W3Movies** for exploring movies, viewing details, adding favorites, and managing movies dynamically. Built with **React, Firebase, MongoDB**, and **Tailwind CSS**.
+A user-friendly Movie Portal for exploring movies, viewing details, adding favorites, and managing movies dynamically. Built with **React, Firebase, MongoDB**, and **Tailwind CSS**.
 
 ---
 
