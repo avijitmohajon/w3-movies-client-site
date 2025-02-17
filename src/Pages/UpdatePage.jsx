@@ -108,7 +108,7 @@ const UpdatePage = () => {
 
     // data send to backend
 
-    fetch(`http://localhost:5000/updatemovies/${_id}`, {
+    fetch(`https://w3-movies-server-site.vercel.app/movie/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

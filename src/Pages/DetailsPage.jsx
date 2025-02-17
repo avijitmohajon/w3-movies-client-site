@@ -14,7 +14,7 @@ const DetailsPage = () => {
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/updatemovies`);
+        const response = await fetch(`https://w3-movies-server-site.vercel.app/movie`);
         const data = await response.json();
 
         // Find the movie with the matching ID
@@ -60,7 +60,7 @@ const DetailsPage = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/updatemovies/${_id}`, {
+        fetch(`https://w3-movies-server-site.vercel.app/movie/${_id}`, {
           method: "delete",
         })
           .then((res) => res.json())

@@ -32,11 +32,12 @@ const Navbar = () => {
             logout
           </button>
         ) : (
-          <div className="flex gap-3 p-0">
+          <div className="flex  gap-3 items-center justify-center p-0">
             <NavLink to="/login" className="btn btn-outline">
               Login
             </NavLink>
-            <NavLink to="/register" className="btn btn-outline">
+            
+            <NavLink to="/register" className="btn  btn-outline">
               Register
             </NavLink>
           </div>
@@ -67,7 +68,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-300 shadow-xl text-base-300 rounded-box z-[1] m-3 w-40 p-3 space-y-3"
+            className="menu menu-sm dropdown-content bg-base-300 shadow-xl text-base-300 rounded-box z-[1] m-3 w-52 p-3 space-y-3"
           >
             {common}
           </ul>
@@ -120,7 +121,7 @@ const Navbar = () => {
               <li>
                 <p>
                   {user && user?.email ? (
-                    <p className="text-xl">{user?.displayName}</p>
+                    <span className="text-xl">{user?.displayName}</span>
                   ) : (
                     "Please login"
                   )}

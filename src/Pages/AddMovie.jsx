@@ -111,7 +111,7 @@ const AddMovie = () => {
 
     // data send to backend
 
-    fetch("http://localhost:5000/updatemovies", {
+    fetch("https://w3-movies-server-site.vercel.app/movie", {
       method: "POST",
       headers: {
         "content-type": "application/json",

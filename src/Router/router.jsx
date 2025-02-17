@@ -13,6 +13,7 @@ import HomePage from "../Pages/HomePage";
 import UpdatePage from "../Pages/UpdatePage";
 import PrivateRoute from "./PrivateRoute";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,13 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
-        loader: () =>
-          fetch("http://localhost:5000/updatemovies").then((res) => res.json()),
+        loader: () =>fetch("https://w3-movies-server-site.vercel.app/movie"),
       },
       {
         path: "/allmovies",
         element: <AllMovies></AllMovies>,
-        loader: () => fetch("http://localhost:5000/updatemovies"),
+        loader: () => fetch("https://w3-movies-server-site.vercel.app/movie"),
       },
       {
         path: "/detailspage/:id",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         path: "/addmovie",
         element: (
           <PrivateRoute>
-            <AddMovie></AddMovie>,
+            <AddMovie></AddMovie>
           </PrivateRoute>
         ),
       },
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatemovies/${params.id}`),
+          fetch(`https://w3-movies-server-site.vercel.app/movie/${params.id}`),
       },
       {
         path: "/release",
@@ -65,6 +65,7 @@ const router = createBrowserRouter([
         path: "/favorite",
         element: <FavoriteMovies></FavoriteMovies>,
       },
+     
       {
         path: "/login",
         element: <Login></Login>,

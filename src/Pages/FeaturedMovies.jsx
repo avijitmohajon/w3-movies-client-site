@@ -12,7 +12,7 @@ const FeaturedMovies = ({movies}) => {
 
   return (
     <div className="container mx-auto ">
-      <h2 className="text-2xl lg:text-5xl font-bold my-4 md:my-10 lg:my-16 text-center bg-[#cf9435] text-base-200 lg:py-5">Featured Movies</h2>
+      <h2 className="text-2xl lg:text-5xl font-bold my-4 md:my-10 lg:my-16 text-center bg-[#cf9435] text-base-200 lg:py-5">Top Rating Movies</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-auto ">
         {topMovies.map((movie) => (
           <div key={movie._id} className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center">

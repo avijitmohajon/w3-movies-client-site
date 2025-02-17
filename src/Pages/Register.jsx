@@ -45,7 +45,7 @@ const Register = () => {
           photoURL: photo,
         })
           .then(() => navigate("/"))
-          .catch((err) => console.log(err));
+          // .catch((err) => console.log(err));
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
