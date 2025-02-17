@@ -68,7 +68,7 @@ const Sponsor = () => {
               rel="noopener noreferrer"
               className="btn bg-black text-white py-2 px-4 rounded-lg transition md:py-3 md:px-6 lg:py-3 lg:px-8"
             >
-              Visit Sponsor
+              Visit website
             </a>
           </div>
         ))}
