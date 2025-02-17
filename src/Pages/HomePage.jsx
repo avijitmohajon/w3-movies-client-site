@@ -10,8 +10,11 @@ const HomePage = () => {
   return (
     <div >
       <Header></Header>
+
       <FeaturedMovies movies={movies}></FeaturedMovies>
+
       <Trending movies={movies}></Trending>
+      
      <Sponsor></Sponsor>
     </div>
   );
