@@ -83,12 +83,11 @@ Create a `.env` file in both the `client` and `server` directories.
 
 ## 📝 Contributors
 
-👤 **Your Name**  
 📧 Email: [avijitmohajon21977@gmail.com] 
 🔗 GitHub: [your-github-profile](https://github.com/avijitmohajon)  
 
 ---
 
 ### 🚀 Ready to Explore Movies? Click Below!
-🔗 [Live Site]:(https://w3movies-184d8.web.app/)
+🔗 [Live Site](https://w3movies-184d8.web.app/)
 
