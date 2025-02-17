@@ -89,5 +89,5 @@ Create a `.env` file in both the `client` and `server` directories.
 ---
 
 ### 🚀 Ready to Explore Movies? Click Below!
-🔗 [Live Site]:(https://w3movies-184d8.web.app/)
+🔗 [Live Site](https://w3movies-184d8.web.app/)
 
