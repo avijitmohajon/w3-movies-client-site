@@ -228,7 +228,10 @@ const Navbar = () => {
               </>
             ) : (
               <div className="flex flex-col gap-2">
-                <NavLink to="/login" className="btn bg-green-600 hover:bg-green-400 btn-sm w-full text-white">
+                <NavLink
+                  to="/login"
+                  className="btn bg-green-600 hover:bg-green-400 btn-sm w-full text-white"
+                >
                   Login
                 </NavLink>
                 <NavLink
