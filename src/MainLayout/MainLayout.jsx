@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Nabbar";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -30,13 +29,10 @@ const MainLayout = () => {
   }, [location]);
 
   return (
-    <div className=" container mx-auto">
-      <header className="w-full mx-auto">
-        <nav >
-          <Navbar></Navbar>
-        </nav>
-      </header>
-      <main className="container mx-auto  bg-base p-1">
+    <div className="max-w-full mx-auto">
+      <Navbar />
+
+      <main className="max-w-full">
         <Outlet />
       </main>
 

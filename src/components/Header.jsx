@@ -10,7 +10,7 @@ import  img4  from "../assets/panchyet.jpg";
 
 const Header = () => {
     return (
-        <div className="carousel h-min">
+        <div className="carousel max-h-[80vh]">
         <div id="slide1" className="carousel-item relative w-full ">
           <img
             src={img1}

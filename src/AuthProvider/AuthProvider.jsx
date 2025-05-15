@@ -20,7 +20,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState()
+    const [loading, setLoading] = useState(true)
 
   // console.log(user);
 
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
     if (isDarkMode) {
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
-      document.documentElement.setAttribute("data-theme", "black");
+      document.documentElement.setAttribute("data-theme", "light");
     }
   }, [isDarkMode]);
 

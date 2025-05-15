@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "firebase": "^11.3.0",
+    "framer-motion": "^12.11.3",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
     "react": "^19.0.0",
@@ -22,7 +23,8 @@
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^7.1.5",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.16.0"
+    "sweetalert2": "^11.16.0",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

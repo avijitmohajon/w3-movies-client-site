@@ -1,21 +1,21 @@
 import React from "react";
 import Header from "../components/Header";
-import {  useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import FeaturedMovies from "./FeaturedMovies";
-import Trending from "./Trending";
 import Sponsor from "./sponsor";
+import Newsletter from "./Newsletter";
+import Testimonials from "./Testimonials";
 
 const HomePage = () => {
   const movies = useLoaderData();
   return (
-    <div >
+    <div>
       <Header></Header>
 
       <FeaturedMovies movies={movies}></FeaturedMovies>
-
-      <Trending movies={movies}></Trending>
-      
-     <Sponsor></Sponsor>
+<Testimonials/>
+      <Newsletter />
+      <Sponsor></Sponsor>
     </div>
   );
 };

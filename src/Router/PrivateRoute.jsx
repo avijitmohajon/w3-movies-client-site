@@ -10,7 +10,7 @@ const location = useLocation();
 
     const { user, loading } = useContext(AuthContext);
     if (loading) {
-        
+  
           <div className="flex items-center justify-center">
             <InfinitySpin
               visible={true}
