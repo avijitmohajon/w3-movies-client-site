@@ -104,8 +104,6 @@ const UpdatePage = () => {
       return;
     }
 
-    // console.log("Movie added:", formData);
-
     // data send to backend
 
     fetch(`https://w3-movies-server-site.vercel.app/movie/${_id}`, {

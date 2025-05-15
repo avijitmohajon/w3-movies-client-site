@@ -46,7 +46,10 @@ const Sponsor = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-300 mb-4">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">Valued Sponsors</span>
+            Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">
+              Valued Sponsors
+            </span>
           </h2>
           <p className="text-base-content max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
             These industry leaders help bring amazing content to you
@@ -58,11 +61,11 @@ const Sponsor = () => {
           {/* Gradient Overlays */}
           <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
-          
+
           {/* Marquee */}
-          <Marquee 
-            pauseOnHover={true} 
-            gradient={false} 
+          <Marquee
+            pauseOnHover={true}
+            gradient={false}
             speed={40}
             className="py-4"
           >
@@ -73,7 +76,7 @@ const Sponsor = () => {
               >
                 {/* Glow Effect */}
                 <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/10 to-transparent"></div>
-                
+
                 {/* Sponsor Logo */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center overflow-hidden border-2 border-white/20 group-hover:border-white/50 transition-all duration-300 bg-white p-1">
                   <img
