@@ -11,16 +11,14 @@ const testimonials = [
     id: 2,
     name: "David Kim",
     role: "Full Stack Developer",
-    quote:
-      "Seamless integration and great performance. Highly recommended!",
+    quote: "Seamless integration and great performance. Highly recommended!",
     image: "https://randomuser.me/api/portraits/men/46.jpg",
   },
   {
     id: 3,
     name: "Emily Carter",
     role: "Product Designer",
-    quote:
-      "A beautiful layout and responsive support. I’m very impressed!",
+    quote: "A beautiful layout and responsive support. I’m very impressed!",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
   },
 ];
