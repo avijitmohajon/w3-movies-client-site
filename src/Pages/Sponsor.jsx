@@ -45,9 +45,9 @@ const Sponsor = () => {
       <div className="max-w-full mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-300 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-300 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">
+            <span >
               Valued Sponsors
             </span>
           </h2>
@@ -59,8 +59,8 @@ const Sponsor = () => {
         {/* Marquee Container */}
         <div className="relative">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 h-full w-24  z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-24  z-10"></div>
 
           {/* Marquee */}
           <Marquee

@@ -11,9 +11,8 @@ const HomePage = () => {
   return (
     <div>
       <Header></Header>
-
       <FeaturedMovies movies={movies}></FeaturedMovies>
-<Testimonials/>
+      <Testimonials />
       <Newsletter />
       <Sponsor></Sponsor>
     </div>

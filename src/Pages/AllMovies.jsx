@@ -25,7 +25,7 @@ const AllMovies = () => {
   return (
     <div
       className={`min-h-screen px-4 py-8 transition-colors duration-300 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"
+        isDarkMode ? "bg-[#1D232A] text-gray-100" : "bg-base-300 text-gray-900"
       }`}
     >
       <div className="max-w-7xl mx-auto">

@@ -36,14 +36,14 @@ const Newsletter = () => {
   }
 
   return (
-    <div className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-10">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-yellow-400">Movie</span> Updates & News
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-content mb-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">
+              <span className="">Movie</span> Updates & News
             </h2>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-lg text-base-content mb-8">
               Subscribe to get exclusive movie recommendations, early ticket access, and special 
               offers straight to your inbox.
             </p>
@@ -80,7 +80,7 @@ const Newsletter = () => {
                   className="h-4 w-4 rounded border-gray-300 text-yellow-600 focus:ring-yellow-500"
                   required
                 />
-                <label htmlFor="privacy" className="ml-2 text-sm text-gray-300">
+                <label htmlFor="privacy" className="ml-2 text-sm text-base-content">
                   I agree to the <a href="/privacy" className="text-yellow-400 hover:underline">Privacy Policy</a>
                 </label>
               </div>

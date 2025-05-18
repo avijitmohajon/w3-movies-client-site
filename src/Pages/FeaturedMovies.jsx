@@ -21,7 +21,7 @@ const FeaturedMovies = ({ movies }) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text py-2"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600 py-2 "
         >
           Top Rated Movies
         </motion.h2>

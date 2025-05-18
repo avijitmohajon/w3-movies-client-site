@@ -27,7 +27,7 @@ const Testimonials = () => {
   return (
     <section className="bg-base-300 py-16">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-base-content">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-base-content text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-blue-600">
           What Our Users Say
         </h2>
         <div className="relative border-l border-base-content pl-8 space-y-12">

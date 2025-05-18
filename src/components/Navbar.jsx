@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { user, logout, setIsDarkMode, isDarkMode } = useContext(AuthContext);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Toggle for mobile dropdown
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -14,7 +15,6 @@ const Navbar = () => {
     { path: "/release", label: "New Releases" },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,6 +53,7 @@ const Navbar = () => {
             tabIndex={0}
             role="button"
             className="btn btn-ghost lg:hidden"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,48 +70,61 @@ const Navbar = () => {
               />
             </svg>
           </motion.div>
-          <motion.ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52 space-y-2"
-            variants={containerVariants}
-          >
-            {navLinks.map((link, index) => (
-              <motion.li key={index} variants={itemVariants}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `btn btn-ghost justify-start ${
-                      isActive ? "text-primary" : ""
-                    }`
-                  }
-                >
-                  {link.label}
-                </NavLink>
-              </motion.li>
-            ))}
-            <motion.li variants={itemVariants}>
-              {user ? (
-                <button
-                  onClick={logout}
-                  className="btn btn-error btn-outline w-full"
-                >
-                  Logout
-                </button>
-              ) : (
-                <div className="flex flex-col gap-2">
-                  <NavLink to="/login" className="btn btn-primary btn-outline">
-                    Login
-                  </NavLink>
+
+          {dropdownOpen && (
+            <motion.ul
+              className="menu menu-sm dropdown-content absolute left-0 mt-3 z-[50] p-2 shadow bg-base-200 rounded-box w-52 space-y-2"
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+            >
+              {navLinks.map((link, index) => (
+                <motion.li key={index} variants={itemVariants}>
                   <NavLink
-                    to="/register"
-                    className="btn btn-secondary btn-outline"
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `btn btn-ghost justify-start ${
+                        isActive ? "text-primary" : ""
+                      }`
+                    }
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    Register
+                    {link.label}
                   </NavLink>
-                </div>
-              )}
-            </motion.li>
-          </motion.ul>
+                </motion.li>
+              ))}
+              <motion.li variants={itemVariants}>
+                {user ? (
+                  <button
+                    onClick={() => {
+                      logout();
+                      setDropdownOpen(false);
+                    }}
+                    className="btn btn-error btn-outline w-full"
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    <NavLink
+                      to="/login"
+                      className="btn btn-primary btn-outline"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Login
+                    </NavLink>
+                    <NavLink
+                      to="/register"
+                      className="btn btn-secondary btn-outline"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Register
+                    </NavLink>
+                  </div>
+                )}
+              </motion.li>
+            </motion.ul>
+          )}
         </div>
 
         {/* Logo */}
@@ -199,7 +213,7 @@ const Navbar = () => {
 
           <motion.ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-200 rounded-box w-64 space-y-3"
+            className="menu menu-sm dropdown-content mt-3 z-[50] p-4 shadow bg-base-200 rounded-box w-64 space-y-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}

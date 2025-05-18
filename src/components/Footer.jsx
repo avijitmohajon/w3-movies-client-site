@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaYoutube, FaFilm } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaFilm } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,7 @@ const Footer = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="footer footer-center bg-base-content pt-10 pb-6 text-base-300 relative overflow-hidden"
+      className="footer footer-center bg-base-300 pt-10 pb-6 text-base-content relative overflow-hidden"
     >
       
 
@@ -59,7 +60,7 @@ const Footer = () => {
 
         <motion.div 
           variants={itemVariants}
-          className="border-x-4 border-base-300 rounded-2xl px-4 md:px-8 py-6 mb-6"
+          className="border-x-4 border-base-content rounded-2xl px-4 md:px-8 py-6 mb-6"
         >
           <motion.nav 
             variants={itemVariants}
@@ -108,7 +109,7 @@ const Footer = () => {
 
           <motion.nav 
             variants={itemVariants}
-            className="border-dotted border-t-2 border-base-300 pt-6"
+            className="border-dotted border-t-2 border-base-content pt-6"
           >
             <motion.p 
               whileHover={{ scale: 1.05 }}
@@ -119,7 +120,7 @@ const Footer = () => {
             <div className="flex justify-center gap-6">
               {[
                 { icon: <FaFacebook size={24} />, url: "https://www.facebook.com/profile.php?id=100039609890568" },
-                { icon: <FaTwitter size={24} />, url: "https://x.com/AJ_AVI_JIT" },
+                { icon: <FaXTwitter size={24} />, url: "https://x.com/AJ_AVI_JIT" },
                 { icon: <FaYoutube size={24} />, url: "https://www.youtube.com/@SuvroShuvoLyrics" }
               ].map((social, index) => (
                 <motion.a
@@ -143,7 +144,7 @@ const Footer = () => {
 
         <motion.p 
           variants={itemVariants}
-          className="border-t-2 border-base-300 pt-4 w-full text-center"
+          className="border-t-2 border-base-content pt-4 w-full text-center"
         >
           Copyright © {currentYear} - All rights reserved
         </motion.p>

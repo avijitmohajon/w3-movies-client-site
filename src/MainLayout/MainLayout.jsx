@@ -36,7 +36,7 @@ const MainLayout = () => {
         <Outlet />
       </main>
 
-      <footer className="mx-auto  mt-5 shadow-lg bg-[#38383855] ">
+      <footer className="mx-auto   shadow-lg bg-[#38383855] ">
         <Footer />
       </footer>
     </div>
