@@ -2,13 +2,19 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-  const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const { createNewUser, setUser, updateUserProfile, loginWithGoogle } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false); // Toggle password visibility
+ const [isLoading, setIsLoading] = useState(false);
+  const handleGoogleLogin = async () => {
+    const user = await loginWithGoogle();
+    navigate("/");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,13 +49,14 @@ const Register = () => {
         updateUserProfile({
           displayName: name,
           photoURL: photo,
-        })
-          .then(() => navigate("/"))
-          // .catch((err) => console.log(err));
+        }).then(() => navigate("/"));
+        // .catch((err) => console.log(err));
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
-         alert("This email is already registered. Please use a different email or log in.")
+          alert(
+            "This email is already registered. Please use a different email or log in."
+          );
         } else {
           setErrorMessage(error.message);
         }
@@ -58,7 +65,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center mt-10">
-      <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl rounded-lg border">
+      <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl rounded-lg border mb-6">
         <h2 className="text-center font-bold pt-3 text-2xl">Register</h2>
         <hr className="w-10/12 mx-auto h-[2px] opacity-40 mt-5 bg-base-300" />
 
@@ -67,21 +74,39 @@ const Register = () => {
             <label className="label">
               <span className="label-text font-medium">Your Name</span>
             </label>
-            <input name="name" type="text" placeholder="Enter your name" className="input input-bordered" required />
+            <input
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              className="input input-bordered"
+              required
+            />
           </div>
 
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Photo URL</span>
             </label>
-            <input name="photo" type="text" placeholder="Enter your Photo URL" className="input input-bordered" required />
+            <input
+              name="photo"
+              type="text"
+              placeholder="Enter your Photo URL"
+              className="input input-bordered"
+              required
+            />
           </div>
 
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Email</span>
             </label>
-            <input name="email" type="email" placeholder="Enter your email" className="input input-bordered" required />
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              className="input input-bordered"
+              required
+            />
           </div>
 
           {/* Password Input with Show/Hide Feature */}
@@ -105,11 +130,18 @@ const Register = () => {
           </div>
 
           {/* Show Validation Errors */}
-          {errorMessage && <p className="text-red-500 text-sm mt-2">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+          )}
 
           <div className="form-control">
             <label className="label flex items-center gap-3 font-semibold">
-              <input type="checkbox" defaultChecked className="checkbox checkbox-sm" required />
+              <input
+                type="checkbox"
+                defaultChecked
+                className="checkbox checkbox-sm"
+                required
+              />
               Accept Terms & Conditions
             </label>
           </div>
@@ -118,6 +150,27 @@ const Register = () => {
             <button className="btn btn-neutral">Register</button>
           </div>
         </form>
+        <div className="flex flex-col items-center pb-6">
+          <div className="relative w-10/12 mb-4">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="px-2 bg-base-100 text-sm text-gray-500">
+                Or continue with
+              </span>
+            </div>
+          </div>
+
+          <button
+            onClick={handleGoogleLogin}
+            disabled={isLoading}
+            className="btn btn-wide gap-2 mb-4 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+          >
+            <FaGoogle className="text-blue-500 text-lg" />
+            <span>Sign in with Google</span>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -225,11 +225,12 @@ const Navbar = () => {
             {user ? (
               <>
                 <li className="text-sm">
-                  <span className="font-semibold">Email:</span> {user.email}
+                  <span className="font-semibold">Email:</span> {user?.email}
                 </li>
                 <li className="text-sm">
                   <span className="font-semibold">Last Login:</span>{" "}
-                  {new Date(user.metadata.lastSignInTime).toLocaleString()}
+                 {new Date(user?.metadata?.lastSignInTime || Date.now()).toLocaleString()}
+
                 </li>
                 <li>
                   <button

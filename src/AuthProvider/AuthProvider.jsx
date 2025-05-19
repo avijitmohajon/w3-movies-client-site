@@ -1,34 +1,32 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
-// import app from "../Firebase/Firebase.init";
-import  app  from "../Firebase/Firebase.init";
+
+import app from "../Firebase/Firebase.init";
 
 import React from "react";
-// import { InfinitySpin } from "react-loader-spinner";
 
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
-
+const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   // console.log(user);
 
-
-
   // theme toggling
   const [isDarkMode, setIsDarkMode] = useState(false);
-
 
   useEffect(() => {
     if (isDarkMode) {
@@ -37,9 +35,6 @@ const AuthProvider = ({ children }) => {
       document.documentElement.setAttribute("data-theme", "light");
     }
   }, [isDarkMode]);
-
-
-
 
   const createNewUser = (email, password) => {
     setLoading(true);
@@ -54,7 +49,10 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-
+ const loginWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
   const updateUserProfile = (updatedData) => {
     return updateProfile(auth.currentUser, updatedData);
   };
@@ -69,12 +67,12 @@ const AuthProvider = ({ children }) => {
     setIsDarkMode,
     isDarkMode,
     loading,
-
+    loginWithGoogle,
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      //   setLoading(false);
+        // setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -82,9 +80,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={authInfo}>
-      {children}
-      </AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
 
